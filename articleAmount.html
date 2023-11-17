@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>  
+        <title>Artical Cost</title> 
+        <script>
+
+            function getPrice(){
+
+            var type = selectType.options[selectType.selectedIndex].text;
+            var words = document.getElementById("inWords").value;
+
+            switch(type) {
+             case "News":
+                 rate = 0.5;
+                 break;
+             case "Opinion":
+                 rate = .10;
+                 break;
+             case "Feature":
+                 rate = .15;
+            } 
+
+            var articalTotal = rate * words;
+
+            document.getElementById("rateOut").innerHTML = "Rate: $" + rate.toFixed(2);
+            document.getElementById("totalOut").innerHTML = "Total: $" + articalTotal.toFixed(2);
+            }
+        </script>
+    </head>
+	<body>
+        <h1>josephParrett</h1>
+
+        <p>Words <input id="inWords" size="5"></p>
+        <p>Artical Type <select id="selectType" onchange="getPrice()">
+            <option value="News">News</option>
+            <option value="Opinion">Opinion</option>
+            <option value="Feature">Feature</option>            
+          </select></p>
+        
+        <p id="rateOut"></p>
+        <p id="totalOut"></p>
+	</body>	
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>  
+        <title>Vacation Idea</title> 
+        <script>
+            function getVacation(){
+         
+         var month = selectMonth.options[selectMonth.selectedIndex].text;
+         var climate = selectClimate.options[selectClimate.selectedIndex].text; 
+                         
+         switch(month) {
+             case "January":
+                 season = "Winter";
+                 break;
+             case "February":
+                 season = "Winter";
+                 break;
+             case "March":
+                 season = "Spring";
+                 break;
+             case "April":
+                 season = "Spring";
+                 break;
+             case "May":
+                 season = "Spring";
+                 break;
+             case "June":
+                 season = "Summer";
+             case "July":
+                 season = "Summer";
+                 break;
+             case "August":
+                 season = "Summer";
+             case "September":
+                 season = "Fall";
+                 break;
+             case "October":
+                 season = "Fall";
+                 break;
+             case "November":
+                 season = "Fall";
+             case "December":
+                 season = "Winter";
+         } 
+         
+         if (climate == "Warm"){
+            switch(season) {
+             case "Winter":
+                 vacationIdea = "Cruise";
+                 break;
+             case "Spring":
+                 vacationIdea = "Beach";
+                 break;
+             case "Summer":
+                 vacationIdea = "National Parks";
+                 break;
+             case "Fall":
+                 vacationIdea = "Music Tour";
+            }
+         } else {
+            switch(season) {
+             case "Winter":
+                 vacationIdea = "Skiing";
+                 break;
+             case "Spring":
+                 vacationIdea = "Canadian Fishing";
+                 break;
+             case "Summer":
+                 vacationIdea = "Mountain Climbing";
+                 break;
+             case "Fall":
+                 vacationIdea = "Fall Foilage";
+            }
+         }
+       
+         document.getElementById("SeasonOut").innerHTML = "The season is: " + season;
+         document.getElementById("climateOut").innerHTML = "The destination: " + climate;
+         document.getElementById("vacationOut").innerHTML = "Vacation idea: " + vacationIdea;
+         }
+        </script>
+    </head>
+	<body>
+        <h1>josephParrett</h1>
+     
+        <p>Month <select id="selectMonth" onchange="getVacation()">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select></p>
+
+          <p>Climate <select id="selectClimate" onchange="getVacation()">Climate>
+            <option value="warm">Warm</option>
+            <option value="cold">Cold</option>            
+          </select></p>
+
+        <p id="SeasonOut"></p>
+        <p id="climateOut"></p>
+        <p id="vacationOut"></p>
+	</body>
+</html>
